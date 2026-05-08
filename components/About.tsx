@@ -101,7 +101,7 @@ export default function About() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
-          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1 space-y-6 max-lg:space-y-4"
+          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1 space-y-6 max-lg:space-y-3"
         >
           <motion.div
             variants={slideInRight}
@@ -123,7 +123,7 @@ export default function About() {
 
           <motion.p
             variants={fadeUp}
-            className="text-[17px] text-graphite leading-[1.75] max-w-2xl max-lg:mx-auto max-lg:max-w-[33ch]"
+            className="text-[17px] text-graphite leading-[1.75] max-w-2xl max-lg:mx-auto max-lg:max-w-[31ch] max-lg:leading-[1.6]"
           >
             Personal trainer especialista em emagrecimento, ajudo mulheres a
             saírem do ciclo de dietas restritivas e treinos que não funcionam,
@@ -132,7 +132,7 @@ export default function About() {
 
           <motion.ul
             variants={staggerHard}
-            className="grid gap-3 max-lg:max-w-[360px] max-lg:mx-auto max-lg:w-full"
+            className="grid gap-2.5 max-lg:max-w-[360px] max-lg:mx-auto max-lg:w-full"
           >
             {bullets.map((b, i) => (
               <motion.li
@@ -141,7 +141,7 @@ export default function About() {
                 variants={slideInLeft}
                 className="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-[15px] text-graphite max-lg:text-left"
               >
-                <span className="w-6 h-6 rounded-full bg-aqua flex items-center justify-center shrink-0 shadow-[0_4px_12px_-2px_rgba(63,194,214,0.5)]">
+                <span className="w-6 h-6 rounded-full bg-aqua flex items-center justify-center shrink-0 mt-0.5 shadow-[0_4px_12px_-2px_rgba(63,194,214,0.5)]">
                   <svg
                     width="11"
                     height="11"
@@ -154,7 +154,7 @@ export default function About() {
                     <path d="M1 5l3 3 5-7" />
                   </svg>
                 </span>
-                <span className="leading-[1.45]">{b}</span>
+                <span className="leading-[1.4] pt-[1px]">{b}</span>
               </motion.li>
             ))}
           </motion.ul>
