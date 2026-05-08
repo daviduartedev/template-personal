@@ -34,7 +34,7 @@ export default function About() {
     <section
       ref={ref}
       id="sobre"
-      className="pt-12 pb-20 max-md:pt-10 max-md:pb-16 lg:py-36 relative bg-bone overflow-hidden"
+      className="pt-8 pb-20 max-md:pt-6 max-md:pb-16 lg:py-36 relative bg-bone overflow-hidden"
     >
       {/* Parallax decorative blobs */}
       <motion.div
@@ -46,15 +46,15 @@ export default function About() {
         className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-ash/40 blur-[100px] pointer-events-none"
       />
 
-      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center relative max-lg:gap-12">
-        {/* Image */}
+      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center relative max-lg:gap-8">
+        {/* Image — abaixo do texto no mobile para evitar vazio gigante antes do título */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
           variants={revealLeft}
           style={{ y: imgY }}
-          className="relative h-[600px] rounded-3xl overflow-hidden group"
+          className="relative h-[min(280px,62vw)] sm:max-lg:h-[min(340px,52vw)] lg:h-[600px] rounded-3xl overflow-hidden group max-lg:order-2"
         >
           <div className="absolute inset-0 ring-4 ring-aqua/0 group-hover:ring-aqua/40 transition-all duration-500 rounded-3xl pointer-events-none z-20" />
 
@@ -101,7 +101,7 @@ export default function About() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
-          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center"
+          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1"
         >
           <motion.div
             variants={slideInRight}
