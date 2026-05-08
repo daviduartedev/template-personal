@@ -113,12 +113,11 @@ export default function About() {
 
           <motion.h2
             variants={slideInRight}
-            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase !leading-[1.06] max-lg:!leading-[1.08] text-ink max-lg:text-balance [&_.hl-chip]:max-lg:!py-[0.05em]"
+            className="font-display text-[clamp(40px,5.5vw,72px)] max-lg:text-[clamp(30px,9vw,40px)] uppercase !leading-[1.06] max-lg:!leading-[1] text-ink max-lg:max-w-[11ch] max-lg:mx-auto [&_.hl-chip]:max-lg:block [&_.hl-chip]:max-lg:w-fit [&_.hl-chip]:max-lg:mx-auto [&_.hl-chip]:max-lg:!py-[0.05em]"
           >
-            MAIS QUE TREINO,
-            <br />
-            <span className="hl-chip align-baseline">UMA JORNADA</span> DE
-            <br />
+            <span className="block">MAIS QUE TREINO,</span>
+            <span className="hl-chip align-baseline">UMA JORNADA</span>
+            <span className="block">DE</span>
             <span className="text-aquaDeep">CUIDADO REAL.</span>
           </motion.h2>
 
@@ -163,7 +162,7 @@ export default function About() {
           {/* Inline mini-cards: years, focus areas */}
           <motion.div
             variants={staggerHard}
-            className="grid grid-cols-2 gap-4 max-w-md max-lg:mx-auto"
+            className="grid grid-cols-2 gap-4 max-w-md max-lg:mx-auto max-lg:w-full"
           >
             {[
               { n: "6+", l: "Anos de experiência" },
