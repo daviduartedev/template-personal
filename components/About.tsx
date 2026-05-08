@@ -34,7 +34,7 @@ export default function About() {
     <section
       ref={ref}
       id="sobre"
-      className="pt-8 pb-20 max-md:pt-6 max-md:pb-16 lg:py-36 relative bg-bone overflow-hidden"
+      className="py-14 sm:py-16 lg:py-28 relative bg-bone overflow-hidden"
     >
       {/* Parallax decorative blobs */}
       <motion.div
@@ -46,7 +46,7 @@ export default function About() {
         className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-ash/40 blur-[100px] pointer-events-none"
       />
 
-      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center relative max-lg:gap-8">
+      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-y-6 lg:gap-x-24 lg:gap-y-16 items-center relative">
         {/* Image — abaixo do texto no mobile para evitar vazio gigante antes do título */}
         <motion.div
           initial="hidden"
@@ -101,11 +101,11 @@ export default function About() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
-          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1"
+          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1 space-y-6 max-lg:space-y-5"
         >
           <motion.div
             variants={slideInRight}
-            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aquaDeep font-bold mb-6 px-3 py-1.5 rounded-full bg-aquaIce border border-aqua/30 max-lg:mx-auto"
+            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aquaDeep font-bold px-3 py-1.5 rounded-full bg-aquaIce border border-aqua/30 max-lg:mx-auto"
           >
             <span className="w-2 h-2 rounded-full bg-aqua" />
             Quem é a Sabrina
@@ -113,18 +113,18 @@ export default function About() {
 
           <motion.h2
             variants={slideInRight}
-            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] text-ink max-lg:text-balance"
+            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase !leading-[1.06] max-lg:!leading-[1.08] text-ink max-lg:text-balance [&_.hl-chip]:max-lg:!py-[0.05em]"
           >
             MAIS QUE TREINO,
             <br />
-            <span className="hl-chip">UMA JORNADA</span> DE
+            <span className="hl-chip align-baseline">UMA JORNADA</span> DE
             <br />
             <span className="text-aquaDeep">CUIDADO REAL.</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="text-[17px] text-graphite leading-[1.75] mt-7 max-w-2xl max-lg:mx-auto"
+            className="text-[17px] text-graphite leading-[1.75] max-w-2xl max-lg:mx-auto"
           >
             Personal trainer especialista em emagrecimento, ajudo mulheres a
             saírem do ciclo de dietas restritivas e treinos que não funcionam —
@@ -133,7 +133,7 @@ export default function About() {
 
           <motion.ul
             variants={staggerHard}
-            className="grid gap-3.5 mt-9 max-lg:max-w-lg max-lg:mx-auto max-lg:w-full"
+            className="grid gap-3.5 max-lg:max-w-lg max-lg:mx-auto max-lg:w-full"
           >
             {bullets.map((b, i) => (
               <motion.li
@@ -163,7 +163,7 @@ export default function About() {
           {/* Inline mini-cards: years, focus areas */}
           <motion.div
             variants={staggerHard}
-            className="mt-10 grid grid-cols-2 gap-4 max-w-md max-lg:mx-auto"
+            className="grid grid-cols-2 gap-4 max-w-md max-lg:mx-auto"
           >
             {[
               { n: "6+", l: "Anos de experiência" },
