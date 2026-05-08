@@ -15,7 +15,6 @@ import {
   fadeUp,
   letterReveal,
   popIn,
-  slideInTop,
   springSnappy,
   staggerFast,
 } from "@/lib/motion";
@@ -62,7 +61,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-4 max-lg:pb-2 lg:pb-0 overflow-hidden hero-gradient"
+      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-0 overflow-hidden hero-gradient"
     >
       {/* Subtle dotted grid */}
       <div
@@ -115,20 +114,6 @@ export default function Hero() {
       >
         {/* LEFT — Headline + copy (sempre acima da foto no mobile) */}
         <div className="relative z-20 lg:pr-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
-          {/* Top tag */}
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={slideInTop}
-            className="inline-flex items-center gap-2 text-[11px] max-lg:text-[10px] tracking-[.22em] uppercase text-graphite font-bold mb-7 max-lg:mb-3 px-3.5 max-lg:px-3 py-1.5 max-lg:py-1 rounded-full bg-bone border border-ash max-lg:mx-auto"
-          >
-            <span className="relative flex w-2 h-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-aqua opacity-75 animate-ping" />
-              <span className="relative inline-flex rounded-full w-2 h-2 bg-aqua" />
-            </span>
-            Personal Online & Presencial
-          </motion.div>
-
           {/* Headline with letter reveal + parallax */}
           <motion.h1
             style={{ y: headlineY }}
@@ -275,7 +260,7 @@ export default function Hero() {
         {/* RIGHT — Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
-          className="relative h-[min(40svh,340px)] sm:max-lg:h-[min(42svh,360px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full"
+          className="relative h-[min(40svh,340px)] sm:max-lg:h-[min(42svh,360px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full max-lg:mb-0"
         >
           {/* Aqua rounded panel behind the photo */}
           <motion.div
@@ -319,7 +304,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
-              className="object-contain object-[center_78%] max-sm:object-[center_76%] lg:object-bottom drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)]"
+              className="drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)] max-lg:object-cover max-lg:object-bottom lg:object-contain lg:object-[center_78%] lg:object-bottom"
             />
           </motion.div>
 
