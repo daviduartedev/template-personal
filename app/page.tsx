@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Method from "@/components/Method";
+import BeforeAfter from "@/components/BeforeAfter";
 import Plans from "@/components/Plans";
 import Testimonial from "@/components/Testimonial";
 import CTA from "@/components/CTA";
@@ -19,6 +20,7 @@ export default function Home() {
       <Marquee />
       <About />
       <Method />
+      <BeforeAfter />
       <Testimonial />
       <Plans />
       <CTA />

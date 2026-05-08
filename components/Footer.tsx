@@ -62,6 +62,7 @@ export default function Footer() {
               {[
                 { href: "#sobre", label: "Sobre" },
                 { href: "#metodo", label: "Método" },
+                { href: "#transformacoes", label: "Antes e depois" },
                 { href: "#planos", label: "Planos" },
                 { href: "#depoimentos", label: "Resultados" },
               ].map((l, i) => (

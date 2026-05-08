@@ -10,6 +10,7 @@ const linksLeft = [
   { href: "#metodo", label: "Método" },
 ];
 const linksRight = [
+  { href: "#transformacoes", label: "Antes e depois" },
   { href: "#planos", label: "Planos" },
   { href: "#depoimentos", label: "Resultados" },
 ];
