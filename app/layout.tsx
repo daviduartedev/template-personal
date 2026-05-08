@@ -25,6 +25,15 @@ export const metadata: Metadata = {
   title: "Sabrina de Souza — Personal Trainer | Especialista em Emagrecimento",
   description:
     "Personal Trainer online e presencial. Especialista em emagrecimento sem efeito sanfona. Método exclusivo da Sabrina de Souza.",
+  icons: {
+    icon: [
+      {
+        url: "/nl4QZrRnCu23Sg18__1_-removebg-preview.png",
+        type: "image/png",
+      },
+    ],
+    apple: "/nl4QZrRnCu23Sg18__1_-removebg-preview.png",
+  },
 };
 
 export default function RootLayout({

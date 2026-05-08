@@ -27,7 +27,7 @@ export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
-  /* Scroll-driven parallax — photo and big BG name move at different speeds */
+  /* Scroll-driven parallax — coluna da foto */
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -37,13 +37,11 @@ export default function Hero() {
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  /* Mouse parallax — photo & chips drift toward cursor */
+  /* Mouse parallax — só widgets CREF & resultado real */
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 60, damping: 18 });
   const sy = useSpring(my, { stiffness: 60, damping: 18 });
-  const photoTx = useTransform(sx, [-0.5, 0.5], [-18, 18]);
-  const photoTy = useTransform(sy, [-0.5, 0.5], [-12, 12]);
   const chipFloatA = useTransform(sx, [-0.5, 0.5], [16, -16]);
   const chipFloatB = useTransform(sy, [-0.5, 0.5], [-12, 12]);
 
@@ -305,9 +303,9 @@ export default function Hero() {
             className="absolute bottom-[8%] right-[5%] w-[68%] aspect-square rounded-full border-2 border-aquaNeon/20"
           />
 
-          {/* The portrait with mouse parallax */}
+          {/* The portrait — parallax só no scroll (scale); sem drift ao mover o mouse */}
           <motion.div
-            style={{ x: photoTx, y: photoTy, scale: photoScale }}
+            style={{ scale: photoScale }}
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.3, delay: 0.6, ease: easeOutExpo }}
