@@ -8,7 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowUpRight, Play, Sparkles, Zap } from "lucide-react";
+import { ArrowUpRight, Play, Sparkles } from "lucide-react";
 import { useEffect, useRef } from "react";
 import {
   easeOutExpo,
@@ -37,7 +37,7 @@ export default function Hero() {
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  /* Mouse parallax — só widgets CREF & resultado real */
+  /* Mouse parallax — chip CREF */
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 60, damping: 18 });
@@ -62,7 +62,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-5 lg:gap-0 pt-28 pb-6 lg:pb-0 overflow-hidden hero-gradient"
+      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-6 max-lg:pb-4 lg:pb-0 overflow-hidden hero-gradient"
     >
       {/* Subtle dotted grid */}
       <div
@@ -111,16 +111,16 @@ export default function Hero() {
       {/* MAIN STAGE */}
       <div
         ref={stageRef}
-        className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-5 lg:gap-4 items-center relative z-10 lg:flex-1 max-lg:flex-none"
+        className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] max-lg:grid-cols-1 gap-5 max-lg:gap-3 lg:gap-4 items-center relative z-10 lg:flex-1 max-lg:flex-none"
       >
-        {/* LEFT — Headline + copy */}
-        <div className="relative z-20 lg:pr-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
+        {/* LEFT — Headline + copy (abaixo da foto no mobile para primeira view mostrar retrato) */}
+        <div className="relative z-20 lg:pr-2 max-lg:order-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
           {/* Top tag */}
           <motion.div
             initial="hidden"
             animate="show"
             variants={slideInTop}
-            className="inline-flex items-center gap-2 text-[11px] tracking-[.22em] uppercase text-graphite font-bold mb-7 px-3.5 py-1.5 rounded-full bg-bone border border-ash max-lg:mx-auto"
+            className="inline-flex items-center gap-2 text-[11px] max-lg:text-[10px] tracking-[.22em] uppercase text-graphite font-bold mb-7 max-lg:mb-3 px-3.5 max-lg:px-3 py-1.5 max-lg:py-1 rounded-full bg-bone border border-ash max-lg:mx-auto"
           >
             <span className="relative flex w-2 h-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-aqua opacity-75 animate-ping" />
@@ -132,12 +132,12 @@ export default function Hero() {
           {/* Headline with letter reveal + parallax */}
           <motion.h1
             style={{ y: headlineY }}
-            className="font-hero font-extrabold tracking-tight text-[clamp(46px,6.5vw,96px)] uppercase text-ink leading-[0.95]"
+            className="font-hero font-extrabold tracking-tight text-[clamp(46px,6.5vw,96px)] max-lg:text-[clamp(26px,7vw,34px)] uppercase text-ink leading-[0.95] max-lg:leading-[0.92]"
           >
             {headline.map((line, lineIdx) => (
               <span
                 key={`h-${lineIdx}`}
-                className="block overflow-hidden pb-1"
+                className="block overflow-hidden pb-1 max-lg:pb-0"
               >
                 <motion.span
                   variants={staggerFast}
@@ -161,7 +161,7 @@ export default function Hero() {
             {headlineAccent.map((line, lineIdx) => (
               <span
                 key={`ha-${lineIdx}`}
-                className="block overflow-hidden pb-1"
+                className="block overflow-hidden pb-1 max-lg:pb-0"
               >
                 <motion.span
                   variants={staggerFast}
@@ -182,7 +182,7 @@ export default function Hero() {
                 </motion.span>
               </span>
             ))}
-            <span className="block overflow-hidden mt-1">
+            <span className="block overflow-hidden mt-1 max-lg:mt-0.5">
               <motion.span
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
@@ -193,7 +193,9 @@ export default function Hero() {
                 }}
                 className="inline-block"
               >
-                <span className="hl-chip">AUTOESTIMA.</span>
+                <span className="hl-chip max-lg:!px-[0.2em] max-lg:!py-[0.03em] max-lg:!text-[0.92em]">
+                  AUTOESTIMA.
+                </span>
               </motion.span>
             </span>
           </motion.h1>
@@ -205,7 +207,7 @@ export default function Hero() {
             custom={2}
             variants={fadeUp}
             transition={{ delay: 1.7 }}
-            className="text-[15px] lg:text-base text-graphite max-w-[480px] mt-7 mb-8 leading-relaxed max-lg:mx-auto"
+            className="text-[15px] lg:text-base max-lg:text-[13px] text-graphite max-w-[480px] mt-7 max-lg:mt-4 mb-8 max-lg:mb-4 leading-relaxed max-lg:leading-snug max-lg:mx-auto max-lg:max-w-[34ch]"
           >
             Método exclusivo de emagrecimento, sem efeito sanfona. Treinos
             personalizados, acompanhamento próximo e resultados que ficam.
@@ -217,24 +219,24 @@ export default function Hero() {
             animate="show"
             variants={staggerFast}
             transition={{ delayChildren: 1.9 }}
-            className="flex gap-3 flex-wrap items-center max-lg:justify-center"
+            className="flex gap-3 max-lg:gap-2 flex-wrap items-center max-lg:justify-center"
           >
             <motion.a
               variants={popIn}
               href="#contato"
               data-hover
-              className="group relative inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full bg-ink text-bone text-xs font-semibold uppercase tracking-wider transition-colors hover:bg-aquaDeep shadow-[0_15px_35px_-10px_rgba(10,15,18,0.4)] overflow-hidden"
+              className="group relative inline-flex items-center gap-2 max-lg:gap-2 pl-6 max-lg:pl-4 pr-2 py-2 max-lg:py-1.5 rounded-full bg-ink text-bone text-xs max-lg:text-[10px] font-semibold uppercase tracking-wider max-lg:tracking-wide transition-colors hover:bg-aquaDeep shadow-[0_15px_35px_-10px_rgba(10,15,18,0.4)] overflow-hidden"
             >
               <span className="relative z-10">Começar agora</span>
-              <span className="relative z-10 w-9 h-9 rounded-full bg-aqua text-ink flex items-center justify-center transition-transform group-hover:rotate-45">
-                <ArrowUpRight className="w-4 h-4" />
+              <span className="relative z-10 w-9 h-9 max-lg:w-8 max-lg:h-8 rounded-full bg-aqua text-ink flex items-center justify-center transition-transform group-hover:rotate-45">
+                <ArrowUpRight className="w-4 h-4 max-lg:w-3.5 max-lg:h-3.5" />
               </span>
             </motion.a>
             <motion.a
               variants={popIn}
               href="#metodo"
               data-hover
-              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-bone border border-ash text-graphite text-xs font-semibold uppercase tracking-wider hover:bg-ink hover:text-bone hover:border-ink transition-all"
+              className="inline-flex items-center gap-2 max-lg:gap-2 px-5 max-lg:px-4 py-3 max-lg:py-1.5 rounded-full bg-bone border border-ash text-graphite text-xs max-lg:text-[10px] font-semibold uppercase tracking-wider max-lg:tracking-wide hover:bg-ink hover:text-bone hover:border-ink transition-all"
             >
               <Play className="w-3 h-3 fill-current" />
               Como funciona
@@ -247,7 +249,7 @@ export default function Hero() {
             animate="show"
             variants={staggerFast}
             transition={{ delayChildren: 2.2 }}
-            className="mt-10 flex items-center gap-8 flex-wrap max-lg:justify-center"
+            className="mt-10 max-lg:mt-5 flex items-center gap-8 max-lg:gap-5 flex-wrap max-lg:justify-center"
           >
             {[
               { n: "500+", l: "Alunas" },
@@ -259,10 +261,10 @@ export default function Hero() {
                 variants={popIn}
                 className="flex items-baseline gap-2"
               >
-                <span className="font-display text-3xl text-aquaDeep leading-none">
+                <span className="font-display text-3xl max-lg:text-2xl text-aquaDeep leading-none">
                   {s.n}
                 </span>
-                <span className="text-[10px] uppercase tracking-[.2em] text-graphite/70 font-medium">
+                <span className="text-[10px] max-lg:text-[9px] uppercase tracking-[.2em] text-graphite/70 font-medium">
                   {s.l}
                 </span>
               </motion.div>
@@ -273,7 +275,7 @@ export default function Hero() {
         {/* RIGHT — Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
-          className="relative h-[min(42svh,400px)] sm:h-[min(44svh,420px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1"
+          className="relative max-lg:order-1 h-[min(44svh,380px)] sm:max-lg:h-[min(46svh,400px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:-mt-1 max-lg:w-full"
         >
           {/* Aqua rounded panel behind the photo */}
           <motion.div
@@ -317,7 +319,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
-              className="object-contain object-[center_82%] lg:object-bottom drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)]"
+              className="object-contain object-[center_78%] max-sm:object-[center_76%] lg:object-bottom drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)]"
             />
           </motion.div>
 
@@ -328,41 +330,19 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ ...springSnappy, delay: 1.4 }}
             style={{ x: chipFloatB, y: chipFloatA }}
-            className="absolute top-[42%] left-[-3%] lg:left-[-6%] z-30"
+            className="absolute top-[38%] max-lg:top-[28%] left-[-3%] max-lg:left-[2%] lg:left-[-6%] z-30"
           >
-            <div className="px-4 py-3 rounded-2xl bg-ink text-bone shadow-[0_18px_45px_-12px_rgba(10,15,18,0.55)] flex items-center gap-3 border border-bone/20">
-              <div className="w-10 h-10 rounded-xl bg-aquaNeon/25 flex items-center justify-center shrink-0">
-                <Sparkles className="w-[18px] h-[18px] text-aquaNeon" />
+            <div className="px-4 py-3 max-lg:px-3 max-lg:py-2 rounded-2xl bg-ink text-bone shadow-[0_18px_45px_-12px_rgba(10,15,18,0.55)] flex items-center gap-3 max-lg:gap-2 border border-bone/20">
+              <div className="w-10 h-10 max-lg:w-8 max-lg:h-8 rounded-xl bg-aquaNeon/25 flex items-center justify-center shrink-0">
+                <Sparkles className="w-[18px] h-[18px] max-lg:w-4 max-lg:h-4 text-aquaNeon" />
               </div>
               <div>
-                <div className="font-display text-xl text-aquaNeon leading-none tracking-tight">
+                <div className="font-display text-xl max-lg:text-lg text-aquaNeon leading-none tracking-tight">
                   CREF
                 </div>
-                <div className="text-[10px] uppercase tracking-[.2em] text-bone font-semibold mt-1">
+                <div className="text-[10px] max-lg:text-[9px] uppercase tracking-[.2em] text-bone font-semibold mt-1 max-lg:mt-0.5">
                   Profissional
                 </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Bottom-left chip — Result card */}
-          <motion.div
-            initial={{ opacity: 0, y: 60, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ ...springSnappy, delay: 1.8 }}
-            style={{ y: chipFloatA }}
-            className="absolute bottom-[14%] left-[-2%] lg:left-[-4%] z-30 max-w-[210px]"
-          >
-            <div className="px-4 py-3.5 rounded-2xl bg-ink/95 text-bone shadow-[0_20px_45px_-12px_rgba(10,15,18,0.5)] border border-aqua/35 backdrop-blur-md">
-              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-[.22em] font-bold mb-2 text-aquaNeon">
-                <Zap className="w-3.5 h-3.5 shrink-0" />
-                Resultado real
-              </div>
-              <div className="font-display text-[1.65rem] leading-none text-bone tracking-tight">
-                -8kg em 12 semanas
-              </div>
-              <div className="text-[11px] mt-2 leading-snug text-bone/85 font-medium">
-                Média das alunas no método.
               </div>
             </div>
           </motion.div>
