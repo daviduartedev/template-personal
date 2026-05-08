@@ -34,7 +34,7 @@ export default function About() {
     <section
       ref={ref}
       id="sobre"
-      className="py-28 lg:py-36 relative bg-bone overflow-hidden"
+      className="pt-12 pb-20 max-md:pt-10 max-md:pb-16 lg:py-36 relative bg-bone overflow-hidden"
     >
       {/* Parallax decorative blobs */}
       <motion.div

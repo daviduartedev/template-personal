@@ -19,7 +19,7 @@ export default function Marquee() {
       whileInView="show"
       viewport={viewportOnce}
       variants={slideInLeft}
-      className="border-y-2 border-ink bg-ink py-6 overflow-hidden relative"
+      className="border-y-2 border-ink bg-ink py-4 max-md:py-3 overflow-hidden relative"
     >
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
@@ -29,7 +29,7 @@ export default function Marquee() {
           backgroundSize: "20px 20px",
         }}
       />
-      <div className="flex whitespace-nowrap animate-marquee font-display text-4xl md:text-5xl text-bone uppercase relative">
+      <div className="flex whitespace-nowrap animate-marquee font-display text-3xl max-md:text-[1.65rem] md:text-5xl text-bone uppercase relative">
         {[...Array(2)].map((_, k) => (
           <div key={k} className="flex items-center gap-16 pr-16 shrink-0">
             {items.map((it, i) => (

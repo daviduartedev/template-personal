@@ -62,7 +62,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-6 max-lg:pb-4 lg:pb-0 overflow-hidden hero-gradient"
+      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-4 max-lg:pb-2 lg:pb-0 overflow-hidden hero-gradient"
     >
       {/* Subtle dotted grid */}
       <div
@@ -113,8 +113,8 @@ export default function Hero() {
         ref={stageRef}
         className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] max-lg:grid-cols-1 gap-5 max-lg:gap-3 lg:gap-4 items-center relative z-10 lg:flex-1 max-lg:flex-none"
       >
-        {/* LEFT — Headline + copy (abaixo da foto no mobile para primeira view mostrar retrato) */}
-        <div className="relative z-20 lg:pr-2 max-lg:order-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
+        {/* LEFT — Headline + copy (sempre acima da foto no mobile) */}
+        <div className="relative z-20 lg:pr-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
           {/* Top tag */}
           <motion.div
             initial="hidden"
@@ -275,7 +275,7 @@ export default function Hero() {
         {/* RIGHT — Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
-          className="relative max-lg:order-1 h-[min(44svh,380px)] sm:max-lg:h-[min(46svh,400px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:-mt-1 max-lg:w-full"
+          className="relative h-[min(40svh,340px)] sm:max-lg:h-[min(42svh,360px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full"
         >
           {/* Aqua rounded panel behind the photo */}
           <motion.div
@@ -330,7 +330,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ ...springSnappy, delay: 1.4 }}
             style={{ x: chipFloatB, y: chipFloatA }}
-            className="absolute top-[38%] max-lg:top-[28%] left-[-3%] max-lg:left-[2%] lg:left-[-6%] z-30"
+            className="absolute top-[38%] max-lg:top-[34%] left-[-3%] max-lg:left-[2%] lg:left-[-6%] z-30"
           >
             <div className="px-4 py-3 max-lg:px-3 max-lg:py-2 rounded-2xl bg-ink text-bone shadow-[0_18px_45px_-12px_rgba(10,15,18,0.55)] flex items-center gap-3 max-lg:gap-2 border border-bone/20">
               <div className="w-10 h-10 max-lg:w-8 max-lg:h-8 rounded-xl bg-aquaNeon/25 flex items-center justify-center shrink-0">
