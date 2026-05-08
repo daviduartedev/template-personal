@@ -57,7 +57,7 @@ export default function Testimonial() {
           </motion.div>
           <motion.h2
             variants={slideInRight}
-            className="font-display text-[clamp(36px,5vw,64px)] uppercase leading-[0.95] text-bone"
+            className="font-display text-[clamp(36px,5vw,64px)] uppercase leading-[0.95] text-bone text-balance"
           >
             QUEM TREINA
             <br />

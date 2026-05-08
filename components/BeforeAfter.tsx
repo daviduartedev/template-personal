@@ -78,7 +78,7 @@ export default function BeforeAfter() {
           </motion.div>
           <motion.h2
             variants={slideInRight}
-            className="font-display text-[clamp(36px,5vw,64px)] uppercase leading-[0.95] text-ink"
+            className="font-display text-[clamp(36px,5vw,64px)] uppercase leading-[0.95] text-ink text-balance"
           >
             RESULTADOS QUE AS
             <br />
@@ -88,7 +88,7 @@ export default function BeforeAfter() {
           </motion.h2>
           <motion.p
             variants={fadeUp}
-            className="text-[17px] text-graphite leading-[1.75] mt-7"
+            className="text-[17px] text-graphite leading-[1.75] mt-7 max-w-2xl mx-auto"
           >
             Cada corpo responde no seu ritmo — mas a combinação de treino
             planejado, orientação próxima e consistência no dia a dia gera mudanças

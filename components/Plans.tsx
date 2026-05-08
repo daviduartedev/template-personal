@@ -110,7 +110,7 @@ export default function Plans() {
           </motion.div>
           <motion.h2
             variants={slideInLeft}
-            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] text-bone"
+            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] text-bone text-balance"
           >
             ESCOLHA O PLANO
             <br />

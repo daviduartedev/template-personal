@@ -64,17 +64,19 @@ export default function CTA() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
+          className="text-center"
         >
           <motion.div
             variants={slideInLeft}
-            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-ink font-bold mb-6"
+            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-ink font-bold mb-6 mx-auto"
           >
-            <span className="w-7 h-px bg-ink" />
+            <span className="w-7 h-px bg-ink" aria-hidden />
             Vagas limitadas
+            <span className="w-7 h-px bg-ink" aria-hidden />
           </motion.div>
 
           {/* Letter-reveal headline */}
-          <h2 className="font-display text-[clamp(48px,7vw,108px)] uppercase leading-[0.92] text-ink">
+          <h2 className="font-display text-[clamp(48px,7vw,108px)] uppercase leading-[0.92] text-ink text-balance">
             <span className="block overflow-hidden pb-1">
               <motion.span
                 variants={staggerFast}

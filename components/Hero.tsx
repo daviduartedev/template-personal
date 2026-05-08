@@ -62,7 +62,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] flex flex-col justify-between pt-28 pb-0 overflow-hidden hero-gradient"
+      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-5 lg:gap-0 pt-28 pb-6 lg:pb-0 overflow-hidden hero-gradient"
     >
       {/* Subtle dotted grid */}
       <div
@@ -111,16 +111,16 @@ export default function Hero() {
       {/* MAIN STAGE */}
       <div
         ref={stageRef}
-        className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-4 items-center relative z-10 flex-1"
+        className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] gap-5 lg:gap-4 items-center relative z-10 lg:flex-1 max-lg:flex-none"
       >
         {/* LEFT — Headline + copy */}
-        <div className="relative z-20 lg:pr-2">
+        <div className="relative z-20 lg:pr-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
           {/* Top tag */}
           <motion.div
             initial="hidden"
             animate="show"
             variants={slideInTop}
-            className="inline-flex items-center gap-2 text-[11px] tracking-[.22em] uppercase text-graphite font-bold mb-7 px-3.5 py-1.5 rounded-full bg-bone border border-ash"
+            className="inline-flex items-center gap-2 text-[11px] tracking-[.22em] uppercase text-graphite font-bold mb-7 px-3.5 py-1.5 rounded-full bg-bone border border-ash max-lg:mx-auto"
           >
             <span className="relative flex w-2 h-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-aqua opacity-75 animate-ping" />
@@ -205,7 +205,7 @@ export default function Hero() {
             custom={2}
             variants={fadeUp}
             transition={{ delay: 1.7 }}
-            className="text-[15px] lg:text-base text-graphite max-w-[480px] mt-7 mb-8 leading-relaxed"
+            className="text-[15px] lg:text-base text-graphite max-w-[480px] mt-7 mb-8 leading-relaxed max-lg:mx-auto"
           >
             Método exclusivo de emagrecimento, sem efeito sanfona. Treinos
             personalizados, acompanhamento próximo e resultados que ficam.
@@ -217,7 +217,7 @@ export default function Hero() {
             animate="show"
             variants={staggerFast}
             transition={{ delayChildren: 1.9 }}
-            className="flex gap-3 flex-wrap items-center"
+            className="flex gap-3 flex-wrap items-center max-lg:justify-center"
           >
             <motion.a
               variants={popIn}
@@ -247,7 +247,7 @@ export default function Hero() {
             animate="show"
             variants={staggerFast}
             transition={{ delayChildren: 2.2 }}
-            className="mt-10 flex items-center gap-8 flex-wrap"
+            className="mt-10 flex items-center gap-8 flex-wrap max-lg:justify-center"
           >
             {[
               { n: "500+", l: "Alunas" },
@@ -273,7 +273,7 @@ export default function Hero() {
         {/* RIGHT — Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
-          className="relative h-[80svh] min-h-[640px] self-end flex items-end justify-center"
+          className="relative h-[min(42svh,400px)] sm:h-[min(44svh,420px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1"
         >
           {/* Aqua rounded panel behind the photo */}
           <motion.div
@@ -317,7 +317,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
-              className="object-contain object-bottom drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)]"
+              className="object-contain object-[center_82%] lg:object-bottom drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)]"
             />
           </motion.div>
 

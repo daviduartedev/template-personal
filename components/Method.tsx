@@ -87,14 +87,16 @@ function MethodCard({
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={viewportOnce}
         transition={{ delay: 0.3 + i * 0.15, duration: 0.7 }}
-        className="font-display text-6xl bg-gradient-to-br from-aquaNeon to-aqua bg-clip-text text-transparent leading-none"
+        className="font-display text-6xl bg-gradient-to-br from-aquaNeon to-aqua bg-clip-text text-transparent leading-none text-center lg:text-left"
       >
         {n}
       </motion.div>
-      <h3 className="font-display text-3xl uppercase mt-6 mb-3 text-bone">
+      <h3 className="font-display text-3xl uppercase mt-6 mb-3 text-bone text-center lg:text-left">
         {t}
       </h3>
-      <p className="text-[14.5px] text-bone/70 leading-[1.7]">{d}</p>
+      <p className="text-[14.5px] text-bone/70 leading-[1.7] text-center lg:text-left">
+        {d}
+      </p>
 
       {/* Bottom shimmer */}
       <div
@@ -136,19 +138,19 @@ export default function Method() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
-          className="flex justify-between items-end gap-10 flex-wrap mb-16"
+          className="flex flex-col items-center text-center lg:flex-row lg:justify-between lg:items-end lg:text-left gap-8 lg:gap-10 mb-16"
         >
-          <div>
+          <div className="lg:text-left">
             <motion.div
               variants={slideInLeft}
-              className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aqua font-bold mb-6 px-3 py-1.5 rounded-full bg-aqua/10 border border-aqua/30"
+              className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aqua font-bold mb-6 px-3 py-1.5 rounded-full bg-aqua/10 border border-aqua/30 max-lg:mx-auto"
             >
               <span className="w-2 h-2 rounded-full bg-aqua animate-pulse" />
               Como funciona
             </motion.div>
             <motion.h2
               variants={slideInLeft}
-              className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95]"
+              className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] max-lg:text-balance"
             >
               O MÉTODO
               <br />
@@ -159,7 +161,7 @@ export default function Method() {
           </div>
           <motion.p
             variants={slideInRight}
-            className="max-w-[420px] text-bone/70 text-base leading-[1.7]"
+            className="max-w-[420px] text-bone/70 text-base leading-[1.7] mx-auto lg:mx-0"
           >
             Três pilares simples que eliminam o efeito sanfona e constroem
             resultados que duram. Estratégia, consistência e acompanhamento.

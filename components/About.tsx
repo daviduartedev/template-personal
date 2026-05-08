@@ -46,7 +46,7 @@ export default function About() {
         className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-ash/40 blur-[100px] pointer-events-none"
       />
 
-      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center relative">
+      <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-center relative max-lg:gap-12">
         {/* Image */}
         <motion.div
           initial="hidden"
@@ -101,10 +101,11 @@ export default function About() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
+          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center"
         >
           <motion.div
             variants={slideInRight}
-            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aquaDeep font-bold mb-6 px-3 py-1.5 rounded-full bg-aquaIce border border-aqua/30"
+            className="inline-flex items-center gap-2.5 text-xs tracking-[.22em] uppercase text-aquaDeep font-bold mb-6 px-3 py-1.5 rounded-full bg-aquaIce border border-aqua/30 max-lg:mx-auto"
           >
             <span className="w-2 h-2 rounded-full bg-aqua" />
             Quem é a Sabrina
@@ -112,7 +113,7 @@ export default function About() {
 
           <motion.h2
             variants={slideInRight}
-            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] text-ink"
+            className="font-display text-[clamp(40px,5.5vw,72px)] uppercase leading-[0.95] text-ink max-lg:text-balance"
           >
             MAIS QUE TREINO,
             <br />
@@ -123,20 +124,23 @@ export default function About() {
 
           <motion.p
             variants={fadeUp}
-            className="text-[17px] text-graphite leading-[1.75] mt-7"
+            className="text-[17px] text-graphite leading-[1.75] mt-7 max-w-2xl max-lg:mx-auto"
           >
             Personal trainer especialista em emagrecimento, ajudo mulheres a
             saírem do ciclo de dietas restritivas e treinos que não funcionam —
             guiando cada uma a um corpo mais forte, leve e duradouro.
           </motion.p>
 
-          <motion.ul variants={staggerHard} className="grid gap-3.5 mt-9">
+          <motion.ul
+            variants={staggerHard}
+            className="grid gap-3.5 mt-9 max-lg:max-w-lg max-lg:mx-auto max-lg:w-full"
+          >
             {bullets.map((b, i) => (
               <motion.li
                 key={b}
                 custom={i}
                 variants={slideInLeft}
-                className="flex items-start gap-3.5 text-[15px] text-graphite"
+                className="flex items-start gap-3.5 text-[15px] text-graphite max-lg:justify-center max-lg:text-left"
               >
                 <span className="w-6 h-6 rounded-full bg-aqua flex items-center justify-center mt-0.5 shrink-0 shadow-[0_4px_12px_-2px_rgba(63,194,214,0.5)]">
                   <svg
@@ -159,7 +163,7 @@ export default function About() {
           {/* Inline mini-cards: years, focus areas */}
           <motion.div
             variants={staggerHard}
-            className="mt-10 grid grid-cols-2 gap-4 max-w-md"
+            className="mt-10 grid grid-cols-2 gap-4 max-w-md max-lg:mx-auto"
           >
             {[
               { n: "6+", l: "Anos de experiência" },
