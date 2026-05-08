@@ -304,7 +304,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
-              className="drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)] max-lg:object-cover max-lg:object-[50%_18%] lg:object-contain lg:object-[center_78%] lg:object-bottom"
+              className="drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)] max-lg:object-cover max-lg:object-[50%_10%] lg:object-contain lg:object-[center_78%] lg:object-bottom"
             />
           </motion.div>
 
