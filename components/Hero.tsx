@@ -26,7 +26,7 @@ export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
 
-  /* Scroll-driven parallax — coluna da foto */
+  /* Scroll-driven parallax, coluna da foto */
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -36,7 +36,7 @@ export default function Hero() {
   const headlineY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  /* Mouse parallax — chip CREF */
+  /* Mouse parallax, chip CREF */
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 60, damping: 18 });
@@ -112,7 +112,7 @@ export default function Hero() {
         ref={stageRef}
         className="w-[min(1380px,94vw)] mx-auto grid lg:grid-cols-[1.05fr_1fr] max-lg:grid-cols-1 gap-5 max-lg:gap-3 lg:gap-4 items-center relative z-10 lg:flex-1 max-lg:flex-none"
       >
-        {/* LEFT — Headline + copy (sempre acima da foto no mobile) */}
+        {/* LEFT, Headline + copy (sempre acima da foto no mobile) */}
         <div className="relative z-20 lg:pr-2 max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center">
           {/* Headline with letter reveal + parallax */}
           <motion.h1
@@ -257,7 +257,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* RIGHT — Photo stage */}
+        {/* RIGHT, Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
           className="relative h-[min(44svh,380px)] sm:max-lg:h-[min(46svh,400px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full max-lg:mb-0"
@@ -290,7 +290,7 @@ export default function Hero() {
             className="absolute bottom-[8%] right-[5%] w-[68%] aspect-square rounded-full border-2 border-aquaNeon/20"
           />
 
-          {/* The portrait — parallax só no scroll (scale); sem drift ao mover o mouse */}
+          {/* The portrait, parallax só no scroll (scale); sem drift ao mover o mouse */}
           <motion.div
             style={{ scale: photoScale }}
             initial={{ y: 80, opacity: 0 }}
@@ -300,7 +300,7 @@ export default function Hero() {
           >
             <Image
               src="/sabrina-hd.png"
-              alt="Sabrina de Souza — Personal Trainer"
+              alt="Sabrina de Souza, Personal Trainer"
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
@@ -309,7 +309,7 @@ export default function Hero() {
           </motion.div>
 
           {/* FLOATING CHIPS around the photo */}
-          {/* Mid-left chip — CREF */}
+          {/* Mid-left chip, CREF */}
           <motion.div
             initial={{ opacity: 0, x: -60, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}

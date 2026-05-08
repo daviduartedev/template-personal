@@ -1,7 +1,7 @@
 import type { Variants, Transition } from "framer-motion";
 
 /* ==========================================================================
-   Easings & timing presets — cubic-bezier tuples are universally accepted
+   Easings & timing presets, cubic-bezier tuples are universally accepted
    ========================================================================== */
 type CubicBezier = [number, number, number, number];
 
@@ -57,7 +57,7 @@ export const splitWord: Variants = {
 };
 
 /* ==========================================================================
-   Aggressive directional reveals — Framer/Webflow vibe
+   Aggressive directional reveals, Framer/Webflow vibe
    ========================================================================== */
 export const slideInLeft: Variants = {
   hidden: { opacity: 0, x: -120, filter: "blur(8px)" },
@@ -115,7 +115,7 @@ export const popIn: Variants = {
   }),
 };
 
-/* Card entry — strong, big movement */
+/* Card entry, strong, big movement */
 export const cardIn: Variants = {
   hidden: { opacity: 0, y: 80, scale: 0.92, rotate: -2 },
   show: (i: number = 0) => ({
@@ -132,7 +132,7 @@ export const cardIn: Variants = {
   }),
 };
 
-/* Reveal via clip-path — text/image curtain */
+/* Reveal via clip-path, text/image curtain */
 export const revealUp: Variants = {
   hidden: { clipPath: "inset(0 0 100% 0)", y: 24 },
   show: (i: number = 0) => ({
@@ -161,7 +161,7 @@ export const staggerFast: Variants = {
   show: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
 };
 
-/* Letter-by-letter reveal — for hero headlines */
+/* Letter-by-letter reveal, for hero headlines */
 export const letterReveal: Variants = {
   hidden: { y: "115%", opacity: 0 },
   show: (i: number = 0) => ({

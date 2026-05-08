@@ -94,7 +94,7 @@ export default function Testimonial() {
             transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="font-display text-[clamp(24px,3.2vw,40px)] uppercase leading-[1.15] text-bone mt-2"
           >
-            &ldquo;Em 6 meses não só transformei meu corpo —
+            &ldquo;Em 6 meses não só transformei meu corpo,
             <br className="hidden md:block" /> mudei minha relação com o{" "}
             <span className="text-aquaNeon">treino e a comida.</span>&rdquo;
           </motion.p>

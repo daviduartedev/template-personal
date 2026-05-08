@@ -17,13 +17,13 @@ import {
 const cases = [
   {
     src: "/antes-depois-1.png",
-    alt: "Comparativo de evolução — aluna acompanhada pela Sabrina de Souza",
+    alt: "Comparativo de evolução, aluna acompanhada pela Sabrina de Souza",
     date: "Out. 2024",
     note: "Registro enviado pela aluna durante o acompanhamento.",
   },
   {
     src: "/antes-depois-2.png",
-    alt: "Evolução corporal — resultado com treino e método consistente",
+    alt: "Evolução corporal, resultado com treino e método consistente",
     date: "Mar. 2026",
     note: "Transformação com treino progressivo e rotina sustentável.",
   },
@@ -90,7 +90,7 @@ export default function BeforeAfter() {
             variants={fadeUp}
             className="text-[17px] text-graphite leading-[1.75] mt-7 max-w-2xl mx-auto"
           >
-            Cada corpo responde no seu ritmo — mas a combinação de treino
+            Cada corpo responde no seu ritmo, mas a combinação de treino
             planejado, orientação próxima e consistência no dia a dia gera mudanças
             que aparecem no espelho. Abaixo, registros reais de quem aplicou o
             método com disciplina (imagens cedidas pelas alunas).
@@ -149,7 +149,7 @@ export default function BeforeAfter() {
           className="text-center text-sm text-slate mt-10 max-w-2xl mx-auto leading-relaxed"
         >
           Resultados individuais variam conforme biotipo, adesão ao programa e
-          estilo de vida. Não se trata de promessa milagrosa — é método, ajuste
+          estilo de vida. Não se trata de promessa milagrosa, é método, ajuste
           constante e compromisso de ambos os lados.
         </motion.p>
       </div>

@@ -29,7 +29,7 @@ export default function WhatsAppFloat() {
         onMouseLeave={() => setHovered(false)}
         className="relative group flex items-center"
       >
-        {/* Tooltip card — slides in from the right when hovered */}
+        {/* Tooltip card, slides in from the right when hovered */}
         <motion.span
           initial={false}
           animate={{
@@ -46,7 +46,7 @@ export default function WhatsAppFloat() {
           <span className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 rotate-45 bg-ink" />
         </motion.span>
 
-        {/* Pulse rings — soft outward animation */}
+        {/* Pulse rings, soft outward animation */}
         <span className="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping" />
         <span
           className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping"

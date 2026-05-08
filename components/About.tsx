@@ -47,7 +47,7 @@ export default function About() {
       />
 
       <div className="w-[min(1320px,94vw)] mx-auto grid lg:grid-cols-[1fr_1.1fr] gap-y-6 lg:gap-x-24 lg:gap-y-16 items-center relative">
-        {/* Image — abaixo do texto no mobile para evitar vazio gigante antes do título */}
+        {/* Image, abaixo do texto no mobile para evitar vazio gigante antes do título */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -101,7 +101,7 @@ export default function About() {
           whileInView="show"
           viewport={viewportLoose}
           variants={staggerHard}
-          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1 space-y-6 max-lg:space-y-5"
+          className="max-lg:text-center max-lg:flex max-lg:flex-col max-lg:items-center max-lg:order-1 space-y-6 max-lg:space-y-4"
         >
           <motion.div
             variants={slideInRight}
@@ -123,25 +123,25 @@ export default function About() {
 
           <motion.p
             variants={fadeUp}
-            className="text-[17px] text-graphite leading-[1.75] max-w-2xl max-lg:mx-auto"
+            className="text-[17px] text-graphite leading-[1.75] max-w-2xl max-lg:mx-auto max-lg:max-w-[33ch]"
           >
             Personal trainer especialista em emagrecimento, ajudo mulheres a
-            saírem do ciclo de dietas restritivas e treinos que não funcionam —
+            saírem do ciclo de dietas restritivas e treinos que não funcionam,
             guiando cada uma a um corpo mais forte, leve e duradouro.
           </motion.p>
 
           <motion.ul
             variants={staggerHard}
-            className="grid gap-3.5 max-lg:max-w-lg max-lg:mx-auto max-lg:w-full"
+            className="grid gap-3 max-lg:max-w-[360px] max-lg:mx-auto max-lg:w-full"
           >
             {bullets.map((b, i) => (
               <motion.li
                 key={b}
                 custom={i}
                 variants={slideInLeft}
-                className="flex items-start gap-3.5 text-[15px] text-graphite max-lg:justify-center max-lg:text-left"
+                className="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-x-3 text-[15px] text-graphite max-lg:text-left"
               >
-                <span className="w-6 h-6 rounded-full bg-aqua flex items-center justify-center mt-0.5 shrink-0 shadow-[0_4px_12px_-2px_rgba(63,194,214,0.5)]">
+                <span className="w-6 h-6 rounded-full bg-aqua flex items-center justify-center shrink-0 shadow-[0_4px_12px_-2px_rgba(63,194,214,0.5)]">
                   <svg
                     width="11"
                     height="11"
@@ -154,7 +154,7 @@ export default function About() {
                     <path d="M1 5l3 3 5-7" />
                   </svg>
                 </span>
-                {b}
+                <span className="leading-[1.45]">{b}</span>
               </motion.li>
             ))}
           </motion.ul>
