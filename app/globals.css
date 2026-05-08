@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bone: #F6FBFC;
+  --ink:  #0A0F12;
+  --aqua: #3FC2D6;
+  --aqua-deep: #1B9FB5;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--bone);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+::selection { background: var(--aqua); color: var(--ink); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bone); }
+::-webkit-scrollbar-thumb { background: #c7dadd; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--aqua); }
+
+.font-display {
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+/* highlight chip */
+.hl-chip {
+  display: inline-block;
+  background: var(--aqua);
+  color: var(--ink);
+  padding: 0.05em 0.3em;
+  border-radius: 0.15em;
+  line-height: 1;
+}
+
+.hl-chip-deep {
+  display: inline-block;
+  background: var(--aqua-deep);
+  color: #F6FBFC;
+  padding: 0.05em 0.3em;
+  border-radius: 0.15em;
+  line-height: 1;
+}
+
+/* hero gradient background - mais cinza, com toque de aqua */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 70% 50% at 85% 15%, rgba(63,194,214,0.28) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 5% 90%, rgba(169,229,239,0.35) 0%, transparent 55%),
+    linear-gradient(180deg, #EEF2F4 0%, #DFE7EB 50%, #DFF3F6 100%);
+}
+
+/* gradient bg for sections */
+.aqua-gradient {
+  background: linear-gradient(135deg, #3FC2D6 0%, #1B9FB5 50%, #0E6E80 100%);
+}
+
+/* Pricing accent border on hover */
+.plan-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(.22,1,.36,1), border-color 0.4s, background 0.4s;
+}
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(63,194,214,0.6), transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.plan-card:hover::before { opacity: 1; }
+.plan-card.featured::before { opacity: 1; }
+
+/* vertical text for hero side */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.4em;
+}
