@@ -61,7 +61,7 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-[4.75rem] pb-0 overflow-hidden hero-gradient"
+      className="relative min-h-0 lg:min-h-[100svh] flex flex-col justify-start lg:justify-between gap-3 max-lg:gap-2 lg:gap-0 pt-28 max-lg:pt-32 pb-0 overflow-hidden hero-gradient"
     >
       {/* Subtle dotted grid */}
       <div
@@ -260,7 +260,7 @@ export default function Hero() {
         {/* RIGHT — Photo stage */}
         <motion.div
           style={{ y: photoY, opacity }}
-          className="relative h-[min(40svh,340px)] sm:max-lg:h-[min(42svh,360px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full max-lg:mb-0"
+          className="relative h-[min(44svh,380px)] sm:max-lg:h-[min(46svh,400px)] lg:h-[80svh] lg:min-h-[640px] min-h-0 self-center lg:self-end flex items-end justify-center max-lg:mt-1 max-lg:w-full max-lg:mb-0"
         >
           {/* Aqua rounded panel behind the photo */}
           <motion.div
@@ -304,7 +304,7 @@ export default function Hero() {
               fill
               priority
               sizes="(max-width: 1024px) 80vw, 50vw"
-              className="drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)] max-lg:object-cover max-lg:object-bottom lg:object-contain lg:object-[center_78%] lg:object-bottom"
+              className="drop-shadow-[0_30px_50px_rgba(10,15,18,0.35)] max-lg:object-cover max-lg:object-[50%_18%] lg:object-contain lg:object-[center_78%] lg:object-bottom"
             />
           </motion.div>
 
