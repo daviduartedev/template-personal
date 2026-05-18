@@ -299,7 +299,7 @@ export default function Hero() {
             className="relative w-full h-full z-10"
           >
             <Image
-              src="/sabrina-hd.png"
+              src="/muSFjGTm1TCF2Dtc-removebg-preview.png"
               alt="Sabrina de Souza, Personal Trainer"
               fill
               priority
